@@ -1,0 +1,840 @@
+/* --- Reset Básico e Estilos Globais --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    line-height: 1.7;
+    color: #3B3B3B;
+    background-color: #FFFFFF;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 90%;
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Classes Auxiliares de Layout */
+.section-padding {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.bg-light {
+    background-color: #FDFBF8;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mt-50 {
+    margin-top: 50px;
+}
+
+/* Estilo unificado para títulos de seção */
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title span {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #B08D57;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 10px;
+}
+
+.section-title h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.6rem;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+.section-title p {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.05rem;
+    color: #5f5f5f;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+/* Estilos de Botões Globais */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 32px;
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn .btn-icon {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.btn .btn-text {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.btn-icon-leading .btn-icon { margin-right: 10px; }
+.btn-icon-trailing i { margin-left: 10px; }
+
+.btn-primary { /* Não estamos usando muito, mas pode ser útil */
+    background-color: #87A9A0;
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(135, 169, 160, 0.3);
+}
+.btn-primary:hover {
+    background-color: #709188;
+    transform: translateY(-3px);
+    box-shadow: 0 7px 20px rgba(135, 169, 160, 0.4);
+}
+
+/* Botão do Banner Modernizado */
+.btn-banner {
+    padding: 16px 38px; /* Ajuste no padding para proporção */
+    font-size: 1rem;   /* Tamanho da fonte do botão */
+    font-weight: 600; /* Peso da fonte */
+    color: #FFFFFF;
+    /* Gradiente sofisticado, pode ser ajustado para cores da imagem banner.jpg */
+    background-image: linear-gradient(to right, #4A5568, #2D3748); /* Cinzas azulados escuros */
+    border-radius: 30px; /* Bordas arredondadas modernas */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), /* Sombra principal */
+                inset 0 1px 2px rgba(255, 255, 255, 0.15); /* Leve brilho interno */
+    text-shadow: 0 1px 1px rgba(0,0,0,0.2);
+    transition: all 0.3s ease-out; /* Transição mais suave */
+    border: 1px solid rgba(255,255,255,0.1); /* Borda sutil */
+}
+
+.btn-banner .btn-icon {
+    font-size: 1.2em; /* Tamanho do ícone em relação à fonte */
+    margin-right: 10px;
+    line-height: 1; /* Para melhor alinhamento vertical do ícone */
+}
+
+.btn-banner:hover {
+    background-image: linear-gradient(to right, #2D3748, #4A5568); /* Inverte gradiente no hover */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25),
+                inset 0 1px 3px rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px) scale(1.03); /* Efeito de elevação e leve aumento */
+    border-color: rgba(255,255,255,0.2);
+}
+
+.btn-banner:active {
+    transform: translateY(-1px) scale(1.01);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2),
+                inset 0 1px 2px rgba(0,0,0,0.1);
+}
+
+
+.btn-secondary {
+    background-color: transparent;
+    color: #B08D57;
+    border: 2px solid #B08D57;
+}
+.btn-secondary:hover {
+    background-color: #B08D57;
+    color: #fff;
+    transform: translateY(-2px) scale(1.01);
+}
+
+.btn-tertiary {
+    background-color: transparent;
+    color: #87A9A0;
+    border: 1.5px solid #87A9A0;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    border-radius: 6px;
+}
+.btn-tertiary:hover {
+    background-color: #87A9A0;
+    color: #fff;
+    border-color: #87A9A0;
+    transform: translateY(-2px);
+}
+
+
+/* --- 1. Banner Principal --- */
+#banner {
+    min-height: 85vh; /* Altura do banner */
+    background: url('banner.jpg') no-repeat center 30%/cover; /* Posição da imagem de fundo: 'center 30%' desce a imagem, mostrando mais do topo */
+    position: relative;
+    display: flex;
+    /* Alinha o .banner-content para baixo */
+    align-items: flex-end; /* <<< ALTERADO */
+    justify-content: center;
+    text-align: center;
+}
+
+.banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Overlay suave para melhorar legibilidade do texto e complementar a imagem */
+    background: linear-gradient(to top, rgba(10, 15, 20, 0.75) 0%, rgba(20, 25, 30, 0.5) 50%, rgba(30, 35, 40, 0.2) 100%);
+}
+
+.banner-content {
+    position: relative;
+    z-index: 1;
+    max-width: 850px;
+    padding: 0 20px;
+    /* Espaçamento inferior para o conteúdo não colar na borda */
+    padding-bottom: 12vh; /* <<< ADICIONADO/AJUSTADO (ex: 12% da altura da viewport) */
+    animation: fadeInContent 1s ease-out 0.5s forwards; /* Animação de entrada */
+    opacity: 0; /* Inicialmente invisível para animação */
+}
+
+@keyframes fadeInContent {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Começa um pouco abaixo */
+    }
+}
+
+
+#banner h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.2rem; /* Tamanho da fonte principal */
+    font-weight: 600; /* Peso um pouco mais leve, se a fonte for forte */
+    color: #F0F2F5; /* Cor do texto principal: um branco levemente acinzentado/azulado */
+    line-height: 1.3;
+    margin-bottom: 35px; /* Espaço aumentado entre o título e o botão */
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.55); /* Sombra para legibilidade */
+}
+
+/* Parágrafo foi removido, então o CSS para ele não é mais necessário aqui */
+/* #banner p { ... } */
+
+
+/* --- 2. Sobre o Dr. Filipe Vaneli --- */
+/* (Restante do CSS permanece o mesmo até a seção de carrossel) */
+.sobre-dr-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    align-items: center;
+}
+
+.sobre-dr-img-container {
+    flex: 1 1 40%;
+    max-width: 450px;
+    margin: 0 auto 30px auto;
+}
+
+.sobre-dr-img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(44, 62, 80, 0.12);
+    object-fit: cover;
+}
+
+.sobre-dr-texto {
+    flex: 1 1 55%;
+}
+
+.sobre-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    padding-bottom: 25px;
+    border-bottom: 1px dashed #e0e0e0;
+}
+.sobre-item:last-child {
+    margin-bottom: 0;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.sobre-item-icon {
+    font-size: 2rem;
+    color: #B08D57;
+    margin-right: 25px;
+    padding-top: 5px;
+    min-width: 40px;
+    text-align: center;
+}
+
+.sobre-item-text h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+.sobre-item-text p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #5f5f5f;
+}
+
+/* --- 3. Contato Rápido / Redes Sociais --- */
+.contato-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 35px;
+    margin-top: 20px;
+}
+
+.contato-card {
+    background-color: #fff;
+    padding: 35px 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-top-color 0.3s ease;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top: 4px solid transparent;
+}
+
+.contato-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.1);
+    border-top-color: #87A9A0;
+}
+
+.contato-card-icon {
+    font-size: 2.8rem;
+    color: #87A9A0;
+    margin-bottom: 20px;
+    transition: color 0.3s ease;
+}
+
+.contato-card-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.contato-card-text {
+    font-size: 0.95rem;
+    color: #5f5f5f;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    flex-grow: 1;
+}
+
+.contato-card-cta {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #B08D57;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+}
+.contato-card-cta i {
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+}
+.contato-card:hover .contato-card-cta {
+    color: #87A9A0;
+}
+.contato-card:hover .contato-card-cta i {
+    transform: translateX(5px);
+}
+
+/* --- 4. Galerias de Resultados (Carrossel) --- */
+.carrossel-wrapper {
+    margin-bottom: 70px;
+}
+.carrossel-wrapper:last-child {
+    margin-bottom: 0;
+}
+
+.carrossel-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 35px;
+    position: relative;
+    padding-bottom: 12px;
+}
+.carrossel-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 3px;
+    background-color: #B08D57;
+    border-radius: 2px;
+}
+
+.carrossel-container {
+    position: relative;
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    background-color: #e9e9e9; /* Fundo um pouco mais escuro para o container do carrossel */
+}
+
+.carrossel {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.carrossel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+    /* O item do carrossel pode ter um display flex para centralizar a imagem se object-fit: contain for usado */
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: center; */
+}
+
+.carrossel-item img {
+    width: 100%;
+    /* ALTURA DAS IMAGENS DO CARROSSEL AJUSTADA SIGNIFICATIVAMENTE */
+    height: 80vh; /* <<< AUMENTADO para 80% da altura da viewport. */
+                  /* Este valor pode precisar de ajustes finos e nas media queries. */
+    display: block;
+    object-fit: cover; /* Continua 'cover' para preencher; o corte será diferente com a nova altura. */
+                       /* Se o corte ainda for um problema, considere preparar as imagens na mesma proporção (aspect ratio) */
+                       /* ou usar 'object-fit: contain;' e estilizar o fundo do '.carrossel-item'. */
+}
+
+.carousel-btn {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #2c3e50;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    opacity: 0.85;
+    z-index: 10;
+}
+.carousel-btn:hover {
+    background-color: #fff;
+    color: #B08D57;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.25);
+    opacity: 1;
+    transform: translateY(-50%) scale(1.1);
+}
+.carousel-btn.prev { left: 25px; }
+.carousel-btn.next { right: 25px; }
+
+/* --- 5. Avaliações --- */
+/* (Restante do CSS permanece o mesmo) */
+.avaliacoes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.avaliacao-card {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+    display: flex;
+    flex-direction: column;
+    border-top: 4px solid #B08D57;
+}
+
+.avaliacao-icon-quote {
+    font-size: 2rem;
+    color: #B08D57;
+    margin-bottom: 15px;
+    opacity: 0.6;
+}
+
+.avaliacao-texto {
+    font-family: 'Lato', sans-serif;
+    font-style: italic;
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 20px;
+    line-height: 1.7;
+    flex-grow: 1;
+}
+
+.avaliacao-autor {
+    margin-bottom: 10px;
+    text-align: right;
+}
+.autor-nome {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: #3B3B3B;
+    display: block;
+}
+.autor-origem {
+    font-size: 0.85rem;
+    color: #777;
+}
+
+.avaliacao-estrelas {
+    text-align: right;
+    color: #FFC107;
+    font-size: 0.9rem;
+}
+.avaliacao-estrelas i {
+    margin-left: 2px;
+}
+
+
+/* --- 6. Localizações das Clínicas --- */
+#localizacoes {
+    background-color: #FFFFFF;
+}
+
+.localizacoes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.localizacao-card {
+    background-color: #FDFBF8;
+    padding: 30px 25px;
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 4px solid #B08D57;
+}
+.localizacao-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 16px 35px rgba(0,0,0,0.1);
+}
+
+.localizacao-card-icon {
+    font-size: 2.6rem;
+    color: #87A9A0;
+    margin-bottom: 18px;
+}
+
+.localizacao-card-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 8px;
+}
+
+.localizacao-card-subtitle {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.85rem;
+    color: #777;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.localizacao-card-endereco {
+    font-size: 0.95rem;
+    color: #5f5f5f;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    flex-grow: 1;
+}
+.localizacao-card-telefone {
+    font-size: 0.95rem;
+    color: #3B3B3B;
+    font-weight: 500;
+    margin-bottom: 25px;
+}
+.localizacao-card-telefone i {
+    margin-right: 8px;
+    color: #87A9A0;
+}
+
+
+/* --- 7. Rodapé --- */
+#rodape {
+    background-color: #232a34;
+    color: #c5c5c5;
+    padding: 70px 0 0 0;
+}
+
+.rodape-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    padding-bottom: 50px;
+    align-items: flex-start;
+}
+
+.rodape-col {
+    font-size: 0.95rem;
+}
+
+.rodape-col-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.rodape-logo {
+    max-width: 160px; /* Reduzido um pouco para não dominar */
+    height: auto;
+    margin-bottom: 15px;
+    /* Se a logo for PNG com fundo transparente e ficar ruim no fundo escuro,
+       adicione um leve padding e um fundo quase branco:
+       background-color: rgba(255,255,255,0.95);
+       padding: 8px;
+       border-radius: 4px;
+    */
+}
+
+.rodape-info-clinica {
+    text-align: left;
+}
+
+.rodape-title-alt {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: #FFFFFF;
+    margin-bottom: 8px;
+    line-height: 1.3;
+}
+
+#rodape .rodape-info-clinica p {
+    font-size: 0.95rem;
+    color: #b0b0b0;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+.rodape-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+.rodape-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 2px;
+    background-color: #B08D57;
+}
+
+#rodape p {
+    margin-bottom: 12px;
+    line-height: 1.8;
+    color: #c5c5c5;
+}
+#rodape p i {
+    margin-right: 8px;
+    color: #B08D57;
+}
+
+.rodape-links {
+    list-style: none;
+    padding-left: 0;
+}
+.rodape-links li {
+    margin-bottom: 10px;
+}
+.rodape-links li a {
+    color: #c5c5c5;
+    text-decoration: none;
+    transition: color 0.3s ease, padding-left 0.3s ease;
+}
+.rodape-links li a:hover {
+    color: #FFFFFF;
+    padding-left: 5px;
+}
+
+.rodape-social-icons {
+    margin-top: 10px;
+}
+.rodape-social-icons a {
+    color: #c5c5c5;
+    font-size: 1.5rem;
+    margin-right: 18px;
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+}
+.rodape-social-icons a:last-child {
+    margin-right: 0;
+}
+.rodape-social-icons a:hover {
+    color: #FFFFFF;
+    transform: translateY(-3px) scale(1.1);
+}
+
+.rodape-bottom {
+    text-align: center;
+    padding: 25px 0;
+    border-top: 1px solid #404854;
+    font-size: 0.9rem;
+    color: #a0a7b0;
+}
+.rodape-bottom p {
+    margin-bottom: 5px;
+    color: #a0a7b0;
+}
+.dev-link {
+    color: #B08D57;
+    font-weight: 500;
+}
+.dev-link:hover {
+    color: #FFFFFF;
+    text-decoration: underline;
+}
+
+
+/* --- Media Queries para Responsividade --- */
+@media (max-width: 1200px) { /* Telas um pouco menores que o container máximo */
+    .carrossel-item img {
+        height: 70vh; /* Reduz um pouco a altura do carrossel */
+    }
+}
+
+@media (max-width: 992px) { /* Tablets */
+    .container { max-width: 960px; }
+    #banner h1 { font-size: 2.8rem; }
+    /* #banner p foi removido */
+    .btn-banner { padding: 16px 35px; font-size: 0.95rem; } /* Botão do banner um pouco menor */
+    .section-title h2 { font-size: 2.3rem; }
+
+    .sobre-dr-img-container { max-width: 380px; }
+    .sobre-dr-content { gap: 30px; }
+    .rodape-grid { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));}
+
+    .carrossel-item img {
+        height: 65vh; /* Altura do carrossel para tablets */
+    }
+}
+
+@media (max-width: 768px) { /* Mobile Laptops e Tablets Menores */
+    .container { width: 95%; }
+    .section-padding { padding-top: 60px; padding-bottom: 60px; }
+    #banner { min-height: 80vh; }
+    #banner .banner-content { padding-bottom: 10vh; } /* Ajuste no padding do banner */
+    #banner h1 { font-size: 2.4rem; margin-bottom: 30px; }
+    /* #banner p foi removido */
+    .btn { padding: 12px 28px; font-size: 0.9rem; }
+
+
+    .section-title h2 { font-size: 2rem; }
+    .section-title p { font-size: 1rem; }
+
+    .sobre-dr-content {
+        flex-direction: column;
+        align-items: center;
+    }
+    .sobre-dr-img-container {
+        flex-basis: auto;
+        width: 80%;
+        max-width: 350px;
+        margin-bottom: 40px;
+    }
+    .sobre-dr-texto { flex-basis: auto; width: 100%;}
+
+    .contato-cards-grid { grid-template-columns: 1fr; gap: 25px; }
+    .contato-card { padding: 30px 25px; }
+
+    .carrossel-title { font-size: 1.6rem; }
+    .carousel-btn { width: 40px; height: 40px; font-size: 1rem; }
+    .carousel-btn.prev { left: 15px; }
+    .carousel-btn.next { right: 15px; }
+    .carrossel-item img {
+        height: 60vh; /* Altura do carrossel para mobile */
+    }
+
+
+    .avaliacoes-grid { grid-template-columns: 1fr; gap: 25px; }
+    .avaliacao-card { padding: 25px; }
+
+    .localizacoes-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    .localizacao-card { padding: 25px; }
+
+    .rodape-grid { grid-template-columns: 1fr; text-align: center; }
+    .rodape-col-logo { align-items: center; }
+    .rodape-info-clinica { text-align: center;}
+    .rodape-title::after { left: 50%; transform: translateX(-50%); }
+    .rodape-links { text-align: center; }
+    .rodape-social-icons { margin-top: 15px; }
+}
+
+@media (max-width: 576px) { /* Celulares Menores */
+    #banner { min-height: 75vh; }
+    #banner h1 { font-size: 2rem; }
+    /* #banner p foi removido */
+    .btn-banner { width: 90%; max-width: 320px; padding: 14px 30px; font-size: 0.9rem;}
+
+    .section-title h2 { font-size: 1.8rem; }
+    .sobre-item-icon { font-size: 1.7rem; margin-right: 15px; }
+    .sobre-item-text h3 { font-size: 1.15rem; }
+    .sobre-item-text p { font-size: 0.9rem; }
+
+    .contato-card-icon { font-size: 2.4rem; }
+    .contato-card-title { font-size: 1.2rem; }
+
+    .carrossel-item img {
+        height: 55vh; /* Altura do carrossel para telas bem pequenas */
+    }
+    .localizacao-card-title { font-size: 1.3rem; }
+}
