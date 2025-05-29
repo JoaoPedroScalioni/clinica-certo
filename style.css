@@ -13,7 +13,7 @@ html {
 body {
     font-family: 'Lato', sans-serif;
     line-height: 1.7;
-    color: #3B3B3B;
+    color: #3B3B3B; /* Cinza Escuro para texto */
     background-color: #FFFFFF;
     overflow-x: hidden;
 }
@@ -32,7 +32,7 @@ body {
 }
 
 .bg-light {
-    background-color: #FDFBF8;
+    background-color: #FDFBF8; /* Branco Gelo / Bege Muito Claro */
 }
 
 .text-center {
@@ -54,7 +54,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     font-size: 0.9rem;
     font-weight: 500;
-    color: #B08D57;
+    color: #B08D57; /* Dourado Envelhecido Suave */
     text-transform: uppercase;
     letter-spacing: 1.5px;
     margin-bottom: 10px;
@@ -63,7 +63,7 @@ body {
 .section-title h2 {
     font-family: 'Playfair Display', serif;
     font-size: 2.6rem;
-    color: #2c3e50;
+    color: #2c3e50; /* Azul Petróleo Escuro */
     margin-bottom: 15px;
     font-weight: 700;
     line-height: 1.3;
@@ -110,44 +110,33 @@ body {
 .btn-icon-leading .btn-icon { margin-right: 10px; }
 .btn-icon-trailing i { margin-left: 10px; }
 
-.btn-primary { /* Não estamos usando muito, mas pode ser útil */
-    background-color: #87A9A0;
-    color: #fff;
-    box-shadow: 0 4px 15px rgba(135, 169, 160, 0.3);
-}
-.btn-primary:hover {
-    background-color: #709188;
-    transform: translateY(-3px);
-    box-shadow: 0 7px 20px rgba(135, 169, 160, 0.4);
-}
 
 /* Botão do Banner Modernizado */
 .btn-banner {
-    padding: 16px 38px; /* Ajuste no padding para proporção */
-    font-size: 1rem;   /* Tamanho da fonte do botão */
-    font-weight: 600; /* Peso da fonte */
+    padding: 16px 38px;
+    font-size: 1rem;
+    font-weight: 600;
     color: #FFFFFF;
-    /* Gradiente sofisticado, pode ser ajustado para cores da imagem banner.jpg */
-    background-image: linear-gradient(to right, #4A5568, #2D3748); /* Cinzas azulados escuros */
-    border-radius: 30px; /* Bordas arredondadas modernas */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), /* Sombra principal */
-                inset 0 1px 2px rgba(255, 255, 255, 0.15); /* Leve brilho interno */
+    background-image: linear-gradient(to right, #4A5568, #2D3748);
+    border-radius: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2),
+                inset 0 1px 2px rgba(255, 255, 255, 0.15);
     text-shadow: 0 1px 1px rgba(0,0,0,0.2);
-    transition: all 0.3s ease-out; /* Transição mais suave */
-    border: 1px solid rgba(255,255,255,0.1); /* Borda sutil */
+    transition: all 0.3s ease-out;
+    border: 1px solid rgba(255,255,255,0.1);
 }
 
 .btn-banner .btn-icon {
-    font-size: 1.2em; /* Tamanho do ícone em relação à fonte */
+    font-size: 1.2em;
     margin-right: 10px;
-    line-height: 1; /* Para melhor alinhamento vertical do ícone */
+    line-height: 1;
 }
 
 .btn-banner:hover {
-    background-image: linear-gradient(to right, #2D3748, #4A5568); /* Inverte gradiente no hover */
+    background-image: linear-gradient(to right, #2D3748, #4A5568);
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25),
                 inset 0 1px 3px rgba(255, 255, 255, 0.2);
-    transform: translateY(-3px) scale(1.03); /* Efeito de elevação e leve aumento */
+    transform: translateY(-3px) scale(1.03);
     border-color: rgba(255,255,255,0.2);
 }
 
@@ -156,7 +145,6 @@ body {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2),
                 inset 0 1px 2px rgba(0,0,0,0.1);
 }
-
 
 .btn-secondary {
     background-color: transparent;
@@ -187,12 +175,11 @@ body {
 
 /* --- 1. Banner Principal --- */
 #banner {
-    min-height: 85vh; /* Altura do banner */
-    background: url('banner.jpg') no-repeat center 30%/cover; /* Posição da imagem de fundo: 'center 30%' desce a imagem, mostrando mais do topo */
+    min-height: 85vh;
+    background: url('banner.jpg') no-repeat center 30%/cover;
     position: relative;
     display: flex;
-    /* Alinha o .banner-content para baixo */
-    align-items: flex-end; /* <<< ALTERADO */
+    align-items: flex-end;
     justify-content: center;
     text-align: center;
 }
@@ -203,7 +190,6 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    /* Overlay suave para melhorar legibilidade do texto e complementar a imagem */
     background: linear-gradient(to top, rgba(10, 15, 20, 0.75) 0%, rgba(20, 25, 30, 0.5) 50%, rgba(30, 35, 40, 0.2) 100%);
 }
 
@@ -212,10 +198,9 @@ body {
     z-index: 1;
     max-width: 850px;
     padding: 0 20px;
-    /* Espaçamento inferior para o conteúdo não colar na borda */
-    padding-bottom: 12vh; /* <<< ADICIONADO/AJUSTADO (ex: 12% da altura da viewport) */
-    animation: fadeInContent 1s ease-out 0.5s forwards; /* Animação de entrada */
-    opacity: 0; /* Inicialmente invisível para animação */
+    padding-bottom: 12vh;
+    animation: fadeInContent 1s ease-out 0.5s forwards;
+    opacity: 0;
 }
 
 @keyframes fadeInContent {
@@ -225,27 +210,21 @@ body {
     }
     from {
         opacity: 0;
-        transform: translateY(20px); /* Começa um pouco abaixo */
+        transform: translateY(20px);
     }
 }
 
-
 #banner h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 3.2rem; /* Tamanho da fonte principal */
-    font-weight: 600; /* Peso um pouco mais leve, se a fonte for forte */
-    color: #F0F2F5; /* Cor do texto principal: um branco levemente acinzentado/azulado */
+    font-size: 3.2rem;
+    font-weight: 600;
+    color: #F0F2F5;
     line-height: 1.3;
-    margin-bottom: 35px; /* Espaço aumentado entre o título e o botão */
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.55); /* Sombra para legibilidade */
+    margin-bottom: 35px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.55);
 }
 
-/* Parágrafo foi removido, então o CSS para ele não é mais necessário aqui */
-/* #banner p { ... } */
-
-
 /* --- 2. Sobre o Dr. Filipe Vaneli --- */
-/* (Restante do CSS permanece o mesmo até a seção de carrossel) */
 .sobre-dr-content {
     display: flex;
     flex-wrap: wrap;
@@ -409,12 +388,13 @@ body {
 
 .carrossel-container {
     position: relative;
-    max-width: 1000px;
+    max-width: 800px; /* LARGURA MÁXIMA DO CARROSSEL NO DESKTOP */
+                     /* Se suas imagens são 1280px de largura, este valor pode ser maior, ex: 900px ou 1000px */
+                     /* Mas para imagens quase quadradas, uma largura muito grande pode fazer a altura (97.65% da largura) ser excessiva. */
     margin: auto;
     overflow: hidden;
     border-radius: 10px;
     box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-    background-color: #e9e9e9; /* Fundo um pouco mais escuro para o container do carrossel */
 }
 
 .carrossel {
@@ -423,23 +403,28 @@ body {
 }
 
 .carrossel-item {
-    min-width: 100%;
+    min-width: 100%; /* Para o funcionamento do slide */
     box-sizing: border-box;
-    /* O item do carrossel pode ter um display flex para centralizar a imagem se object-fit: contain for usado */
-    /* display: flex; */
-    /* align-items: center; */
-    /* justify-content: center; */
+    background-color: #e0e0e0; /* Cor de fundo para espaços vazios com object-fit: contain */
+    position: relative; /* Necessário para posicionar a imagem absolutamente dentro */
+    width: 100%;
+    /* Define a proporção do item para ser igual à das suas imagens (1250 altura / 1280 largura = ~97.65%) */
+    /* Isso cria um "aspect ratio box" */
+    padding-top: 97.65625%; /* (1250 / 1280 * 100%) <<< ALTURA PROPORCIONAL À LARGURA */
 }
 
 .carrossel-item img {
-    width: 100%;
-    /* ALTURA DAS IMAGENS DO CARROSSEL AJUSTADA SIGNIFICATIVAMENTE */
-    height: 80vh; /* <<< AUMENTADO para 80% da altura da viewport. */
-                  /* Este valor pode precisar de ajustes finos e nas media queries. */
     display: block;
-    object-fit: cover; /* Continua 'cover' para preencher; o corte será diferente com a nova altura. */
-                       /* Se o corte ainda for um problema, considere preparar as imagens na mesma proporção (aspect ratio) */
-                       /* ou usar 'object-fit: contain;' e estilizar o fundo do '.carrossel-item'. */
+    /* Posiciona a imagem absolutamente dentro do .carrossel-item */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* <<< GARANTE QUE A IMAGEM INTEIRA APAREÇA, SEM CORTES */
+                         /* A imagem será redimensionada para caber, mantendo sua proporção. */
+                         /* O espaço não preenchido mostrará o background-color do .carrossel-item */
+    object-position: center center; /* Centraliza a imagem dentro do espaço */
 }
 
 .carousel-btn {
@@ -447,7 +432,7 @@ body {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0);
     color: #2c3e50;
     border: none;
     border-radius: 50%;
@@ -473,7 +458,6 @@ body {
 .carousel-btn.next { right: 25px; }
 
 /* --- 5. Avaliações --- */
-/* (Restante do CSS permanece o mesmo) */
 .avaliacoes-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -627,15 +611,9 @@ body {
 }
 
 .rodape-logo {
-    max-width: 160px; /* Reduzido um pouco para não dominar */
+    max-width: 160px;
     height: auto;
     margin-bottom: 15px;
-    /* Se a logo for PNG com fundo transparente e ficar ruim no fundo escuro,
-       adicione um leve padding e um fundo quase branco:
-       background-color: rgba(255,255,255,0.95);
-       padding: 8px;
-       border-radius: 4px;
-    */
 }
 
 .rodape-info-clinica {
@@ -743,35 +721,39 @@ body {
 
 
 /* --- Media Queries para Responsividade --- */
-@media (max-width: 1200px) { /* Telas um pouco menores que o container máximo */
-    .carrossel-item img {
-        height: 70vh; /* Reduz um pouco a altura do carrossel */
+
+/* Desktop um pouco menor / Tablets Maiores em Paisagem */
+@media (max-width: 1200px) {
+    .carrossel-container {
+        max-width: 750px; /* Ajusta a largura máxima para telas menores */
     }
+    /* A altura do .carrossel-item é definida pelo padding-top, então não precisa mudar aqui */
 }
 
-@media (max-width: 992px) { /* Tablets */
+/* Tablets em Retrato e Paisagem */
+@media (max-width: 992px) {
     .container { max-width: 960px; }
     #banner h1 { font-size: 2.8rem; }
-    /* #banner p foi removido */
-    .btn-banner { padding: 16px 35px; font-size: 0.95rem; } /* Botão do banner um pouco menor */
+    .btn-banner { padding: 16px 35px; font-size: 0.95rem; }
     .section-title h2 { font-size: 2.3rem; }
 
     .sobre-dr-img-container { max-width: 380px; }
     .sobre-dr-content { gap: 30px; }
     .rodape-grid { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));}
 
-    .carrossel-item img {
-        height: 65vh; /* Altura do carrossel para tablets */
+    .carrossel-container {
+        max-width: 650px;
     }
+    /* A altura do .carrossel-item é definida pelo padding-top, então não precisa mudar aqui */
 }
 
-@media (max-width: 768px) { /* Mobile Laptops e Tablets Menores */
+/* Mobile Landscape (Celulares em paisagem) e Tablets Menores (Retrato) */
+@media (max-width: 768px) {
     .container { width: 95%; }
     .section-padding { padding-top: 60px; padding-bottom: 60px; }
     #banner { min-height: 80vh; }
-    #banner .banner-content { padding-bottom: 10vh; } /* Ajuste no padding do banner */
+    #banner .banner-content { padding-bottom: 10vh; }
     #banner h1 { font-size: 2.4rem; margin-bottom: 30px; }
-    /* #banner p foi removido */
     .btn { padding: 12px 28px; font-size: 0.9rem; }
 
 
@@ -794,12 +776,22 @@ body {
     .contato-card { padding: 30px 25px; }
 
     .carrossel-title { font-size: 1.6rem; }
-    .carousel-btn { width: 40px; height: 40px; font-size: 1rem; }
-    .carousel-btn.prev { left: 15px; }
-    .carousel-btn.next { right: 15px; }
-    .carrossel-item img {
-        height: 60vh; /* Altura do carrossel para mobile */
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
     }
+    .carousel-btn.prev { left: 10px; } /* Mais próximo da borda no mobile */
+    .carousel-btn.next { right: 10px; }
+
+    .carrossel-container {
+        max-width: 100%; /* Ocupa toda a largura disponível */
+        border-radius: 0;
+        box-shadow: none;
+    }
+    /* O padding-top no .carrossel-item já cuida da altura proporcional.
+       Não é necessário redefinir height para .carrossel-item img aqui,
+       a menos que queira um comportamento diferente da proporção da imagem. */
 
 
     .avaliacoes-grid { grid-template-columns: 1fr; gap: 25px; }
@@ -819,10 +811,10 @@ body {
     .rodape-social-icons { margin-top: 15px; }
 }
 
-@media (max-width: 576px) { /* Celulares Menores */
+/* Celulares em modo Retrato */
+@media (max-width: 576px) {
     #banner { min-height: 75vh; }
     #banner h1 { font-size: 2rem; }
-    /* #banner p foi removido */
     .btn-banner { width: 90%; max-width: 320px; padding: 14px 30px; font-size: 0.9rem;}
 
     .section-title h2 { font-size: 1.8rem; }
@@ -833,8 +825,18 @@ body {
     .contato-card-icon { font-size: 2.4rem; }
     .contato-card-title { font-size: 1.2rem; }
 
-    .carrossel-item img {
-        height: 55vh; /* Altura do carrossel para telas bem pequenas */
-    }
+    /* O carrossel-item já é responsivo devido ao padding-top %.
+       A imagem dentro dele (com object-fit: contain e width/height 100%)
+       também será. Não são necessários ajustes de height específicos aqui
+       para a imagem se a proporção do item for mantida. */
+
     .localizacao-card-title { font-size: 1.3rem; }
+}
+
+/* Celulares bem pequenos */
+@media (max-width: 480px) {
+    #banner h1 { font-size: 1.8rem; }
+    .btn-banner { padding: 12px 25px; font-size: 0.85rem; }
+
+    /* Mesma lógica para o carrossel aqui: o padding-top % deve funcionar bem */
 }
