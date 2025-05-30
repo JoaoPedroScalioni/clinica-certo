@@ -388,14 +388,15 @@ body {
 
 .carrossel-container {
     position: relative;
-    max-width: 800px; 
-    margin: 0 auto;   
-    overflow: hidden; 
+    /* LARGURA MÁXIMA DO CARROSSEL NO DESKTOP - AJUSTADA PARA EXEMPLO */
+    max-width: 650px; /* <<< ANTES ERA 800px, AJUSTE CONFORME SUA PREFERÊNCIA */
+    margin: 0 auto;   /* Centraliza o carrossel */
+    overflow: hidden; /* Essencial: esconde os slides que não estão na área visível */
     border-radius: 10px;
     box-shadow: 0 15px 40px rgba(0,0,0,0.1);
 }
 
-.carrossel { 
+.carrossel { /* Este é o "trilho" que contém os slides e se move */
     display: flex;
     transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
@@ -408,9 +409,7 @@ body {
     /* A cor de fundo não será visível se object-fit: cover preencher tudo */
     /* background-color: #e0e0e0; */ 
     position: relative; 
-    /* O padding-top define a proporção da área do slide. */
-    /* A imagem vai cobrir esta área proporcional. */
-    padding-top: 97.65625%; /* (1250 / 1280 * 100%) */
+    padding-top: 97.65625%; /* (1250 / 1280 * 100%) - Mantém a proporção. Ajuste se a proporção desejada for outra. */
 }
 
 .carrossel-item img {
@@ -420,17 +419,16 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* <<< ALTERAÇÃO PRINCIPAL AQUI: A imagem vai cobrir a área */
-    object-position: center center; /* Centraliza a imagem antes de cortar, se necessário */
+    object-fit: cover; /* A imagem vai cobrir a área, podendo cortar partes */
+    object-position: center center; 
 }
 
-/* Estilos dos botões e responsividade permanecem os mesmos da última versão */
 .carousel-btn {
     cursor: pointer;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.7); 
     color: #2c3e50;
     border: none;
     border-radius: 50%;
@@ -442,40 +440,49 @@ body {
     justify-content: center;
     box-shadow: 0 3px 12px rgba(0,0,0,0.2);
     transition: all 0.3s ease;
-    opacity: 0.85;
-    z-index: 10;
+    opacity: 0.85; 
+    z-index: 10; 
 }
 .carousel-btn:hover {
     background-color: #fff;
     color: #B08D57;
     box-shadow: 0 5px 18px rgba(0,0,0,0.25);
     opacity: 1;
-    transform: translateY(-50%) scale(1.1);
+    transform: translateY(-50%) scale(1.1); 
 }
 .carousel-btn.prev { left: 25px; }
 .carousel-btn.next { right: 25px; }
 
 /* --- Media Queries para Responsividade do Carrossel --- */
+/* Você pode querer ajustar estes valores se o max-width base mudou muito */
+
+/* Desktop um pouco menor / Tablets Maiores em Paisagem */
 @media (max-width: 1200px) {
     .carrossel-container {
-        max-width: 750px;
+        /* Se o seu novo max-width base for menor que 750px, ajuste este também ou remova se não for mais necessário */
+        max-width: 750px; /* Exemplo: poderia ser 650px se o base agora é 700px e você quer manter a escala */
     }
 }
+
+/* Tablets em Retrato e Paisagem */
 @media (max-width: 992px) {
     .carrossel-container {
-        max-width: 650px;
+         /* Se o seu novo max-width base for menor que 650px, ajuste este também ou remova se não for mais necessário */
+        max-width: 650px; /* Exemplo: poderia ser 550px */
     }
 }
+
+/* Mobile Landscape (Celulares em paisagem) e Tablets Menores (Retrato) */
 @media (max-width: 768px) {
     .carrossel-title {
-        font-size: 1.6rem;
+        font-size: 1.6rem; 
     }
     .carousel-btn {
         width: 40px;
         height: 40px;
         font-size: 1.1rem;
     }
-    .carousel-btn.prev { left: 10px; }
+    .carousel-btn.prev { left: 10px; } 
     .carousel-btn.next { right: 10px; }
 
     .carrossel-container {
