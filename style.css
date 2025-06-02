@@ -227,15 +227,15 @@ body {
 /* --- 2. Sobre o Dr. Filipe Vaneli --- */
 .sobre-dr-content {
     display: flex;
-    flex-wrap: wrap;
-    gap: 50px;
-    align-items: center;
+    flex-wrap: wrap; /* Permite que imagem e texto quebrem linha em telas menores */
+    gap: 30px;       /* Espaço entre a imagem e o bloco de texto. Ajuste se precisar. */
+    align-items: flex-start; /* Alinha imagem e bloco de texto pelo topo */
 }
 
 .sobre-dr-img-container {
-    flex: 1 1 40%;
-    max-width: 450px;
-    margin: 0 auto 30px auto;
+    flex: 1 1 45%;     /* Imagem: base de 40% da largura, pode crescer/diminuir */
+    max-width: 420px;  /* Limite máximo para a largura da imagem. */
+    margin-bottom: 20px; /* Espaçamento se a imagem quebrar para baixo em telas menores */
 }
 
 .sobre-dr-img {
@@ -247,41 +247,53 @@ body {
 }
 
 .sobre-dr-texto {
-    flex: 1 1 55%;
+    flex: 1 1 55%; /* Texto: base de 55%, com flex-grow 1 (implícito), tentará usar o espaço disponível */
+    display: grid;
+
+    /* Configuração crucial para os itens usarem o espaço horizontal em colunas */
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    /*
+       Explicação:
+       - 'auto-fit': Cria o máximo de colunas que couberem no espaço.
+       - 'minmax(260px, 1fr)': Cada coluna terá no MÍNIMO 260px. Se houver mais espaço,
+         as colunas se expandirão para preenchê-lo (o '1fr' distribui o espaço restante).
+       AJUSTE O VALOR '260px':
+       - Se quiser colunas um pouco mais estreitas (permitindo que MAIS colunas caibam se houver espaço),
+         diminua este valor (ex: 240px).
+       - Se quiser colunas um pouco mais largas (menos colunas, mas cada uma mais larga),
+         aumente este valor (ex: 280px, 300px).
+    */
+    gap: 30px; /* Espaçamento entre os itens, tanto vertical quanto horizontal */
 }
 
 .sobre-item {
     display: flex;
     align-items: flex-start;
-    margin-bottom: 30px;
-    padding-bottom: 25px;
-    border-bottom: 1px dashed #e0e0e0;
-}
-.sobre-item:last-child {
-    margin-bottom: 0;
-    border-bottom: none;
-    padding-bottom: 0;
+    /* Nenhum estilo de "caixa" aqui (sem background, padding de caixa, etc.) */
 }
 
+/* Mantive os ajustes de tamanho e espaçamento para ícones e texto,
+   pois ajudam na legibilidade e aparência geral. Ajuste se preferir. */
 .sobre-item-icon {
-    font-size: 2rem;
+    font-size: 1.8rem;
     color: #B08D57;
-    margin-right: 25px;
+    margin-right: 20px;
     padding-top: 5px;
-    min-width: 40px;
+    min-width: 35px;
     text-align: center;
 }
 
 .sobre-item-text h3 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: 600;
     color: #2c3e50;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
+
 .sobre-item-text p {
-    font-size: 1rem;
-    line-height: 1.8;
+    font-size: 0.95rem;
+    line-height: 1.7;
     color: #5f5f5f;
 }
 
