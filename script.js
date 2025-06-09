@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Inicializa todos os carrosséis da página
     inicializarCarrossel('carrosselFacial');
     inicializarCarrossel('carrosselCorporal');
-    inicializarCarrossel('carrosselLabial'); // <-- Linha adicionada
+    inicializarCarrossel('carrosselLabial'); // <-- Linha para o carrossel de lábios
 
     // Atualiza o ano no rodapé
     const anoAtualSpan = document.getElementById('ano-atual');
