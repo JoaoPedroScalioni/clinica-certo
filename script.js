@@ -64,14 +64,18 @@ function mudarSlide(carrosselId, direcao) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Inicializa todos os carrosséis da página
     inicializarCarrossel('carrosselFacial');
     inicializarCarrossel('carrosselCorporal');
+    inicializarCarrossel('carrosselLabial'); // <-- Linha adicionada
 
+    // Atualiza o ano no rodapé
     const anoAtualSpan = document.getElementById('ano-atual');
     if (anoAtualSpan) {
         anoAtualSpan.textContent = new Date().getFullYear();
     }
 
+    // Adiciona rolagem suave para links de âncora
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             const hrefAttribute = this.getAttribute('href');
