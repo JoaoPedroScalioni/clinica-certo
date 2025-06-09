@@ -224,18 +224,19 @@ body {
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.55);
 }
 
-/* --- 2. Sobre o Dr. Filipe Vaneli --- */
+/* --- 2. Sobre o Dr. Filipe Vaneli (VERSÃO MELHORADA) --- */
+
 .sobre-dr-content {
     display: flex;
-    flex-wrap: wrap; /* Permite que imagem e texto quebrem linha em telas menores */
-    gap: 30px;       /* Espaço entre a imagem e o bloco de texto. Ajuste se precisar. */
-    align-items: flex-start; /* Alinha imagem e bloco de texto pelo topo */
+    flex-wrap: wrap; /* Mantém a quebra em telas muito pequenas */
+    align-items: center; /* Alinha verticalmente a imagem e o texto, fica mais harmonioso */
+    gap: 50px;       /* Aumenta o espaço entre a imagem e o texto */
 }
 
 .sobre-dr-img-container {
-    flex: 1 1 45%;     /* Imagem: base de 40% da largura, pode crescer/diminuir */
-    max-width: 420px;  /* Limite máximo para a largura da imagem. */
-    margin-bottom: 20px; /* Espaçamento se a imagem quebrar para baixo em telas menores */
+    flex: 1 1 400px; /* Base de 400px, pode crescer e diminuir. */
+    max-width: 450px; /* Limite para a imagem não ficar gigante */
+    min-width: 300px; /* Garante que a imagem não fique espremida demais */
 }
 
 .sobre-dr-img {
@@ -247,45 +248,30 @@ body {
 }
 
 .sobre-dr-texto {
-    flex: 1 1 55%; /* Texto: base de 55%, com flex-grow 1 (implícito), tentará usar o espaço disponível */
+    /* O texto ocupará mais espaço que a imagem (flex-grow: 1.5) */
+    flex: 1.5 1 500px;
     display: grid;
-
-    /* Configuração crucial para os itens usarem o espaço horizontal em colunas */
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    /*
-       Explicação:
-       - 'auto-fit': Cria o máximo de colunas que couberem no espaço.
-       - 'minmax(260px, 1fr)': Cada coluna terá no MÍNIMO 260px. Se houver mais espaço,
-         as colunas se expandirão para preenchê-lo (o '1fr' distribui o espaço restante).
-       AJUSTE O VALOR '260px':
-       - Se quiser colunas um pouco mais estreitas (permitindo que MAIS colunas caibam se houver espaço),
-         diminua este valor (ex: 240px).
-       - Se quiser colunas um pouco mais largas (menos colunas, mas cada uma mais larga),
-         aumente este valor (ex: 280px, 300px).
-    */
-    gap: 30px; /* Espaçamento entre os itens, tanto vertical quanto horizontal */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px 35px; /* 25px de espaço vertical, 35px horizontal */
 }
 
 .sobre-item {
     display: flex;
     align-items: flex-start;
-    /* Nenhum estilo de "caixa" aqui (sem background, padding de caixa, etc.) */
+    text-align: left; /* Garante alinhamento à esquerda */
 }
 
-/* Mantive os ajustes de tamanho e espaçamento para ícones e texto,
-   pois ajudam na legibilidade e aparência geral. Ajuste se preferir. */
 .sobre-item-icon {
-    font-size: 1.8rem;
+    font-size: 1.7rem;
     color: #B08D57;
-    margin-right: 20px;
+    margin-right: 18px;
     padding-top: 5px;
-    min-width: 35px;
-    text-align: center;
+    min-width: 30px;
 }
 
 .sobre-item-text h3 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.2rem;
+    font-size: 1.15rem; /* Levemente ajustado para melhor leitura */
     font-weight: 600;
     color: #2c3e50;
     margin-bottom: 8px;
@@ -657,7 +643,7 @@ body {
 }
 
 .rodape-logo {
-    max-width: 160px;
+    max-width: 260px;
     height: auto;
     margin-bottom: 15px;
 }
